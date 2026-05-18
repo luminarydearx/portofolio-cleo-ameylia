@@ -1,0 +1,70 @@
+{
+  "profileImage": "",
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/dederrfeb/",
+    "email": "dearlyfebrianoi@gmail.com",
+    "github": "https://github.com/luminarydearx",
+    "resume": "/resume.pdf"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Nova Programming Language",
+      "tags": [
+        "Python"
+      ],
+      "github": "https://github.com/luminarydearx/Nova-Language",
+      "demo": "",
+      "stars": "74",
+      "gradient": "from-violet-500/20 via-purple-500/10 to-transparent",
+      "screenColor": "bg-violet-950/50",
+      "metricValue": "127",
+      "metricLabel": "Active Users"
+    },
+    {
+      "id": 2,
+      "title": "CV Auto Generator",
+      "tags": [
+        "React",
+        "Cloudinary",
+        "Tailwind"
+      ],
+      "github": "https://github.com/luminarydearx/AutoGenerator-App",
+      "demo": "https://auto-generator-app.vercel.app",
+      "stars": "467",
+      "gradient": "from-emerald-500/20 via-green-500/10 to-transparent",
+      "screenColor": "bg-emerald-950/50",
+      "metricValue": "587",
+      "metricLabel": "Total Users"
+    },
+    {
+      "id": 3,
+      "title": "Memoire",
+      "tags": [
+        "Next.js",
+        "Cloudinary",
+        "Tailwind"
+      ],
+      "github": "https://github.com/luminarydearx/Memoire",
+      "demo": "https://memoirepersonal.vercel.app",
+      "stars": "20",
+      "gradient": "from-orange-500/20 via-amber-500/10 to-transparent",
+      "screenColor": "bg-orange-950/50",
+      "metricValue": "82",
+      "metricLabel": "Total Users"
+    }
+  ],
+  "aboutStats": {
+    "companiesValue": 3,
+    "fundingValue": 12,
+    "usersValue": 100,
+    "countriesValue": 15
+  },
+  "statsData": {
+    "usersValue": 100,
+    "arrValue": 2,
+    "uptimeValue": 99.9,
+    "ratingValue": 4.9,
+    "teamValue": 30
+  }
+}

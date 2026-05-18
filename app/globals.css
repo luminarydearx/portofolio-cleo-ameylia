@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   PREMIUM DESIGN TOKEN SYSTEM
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Light Mode Tokens */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 94%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --surface-1: 0 0% 98%;
+    --surface-2: 240 5% 96%;
+    --surface-3: 240 5% 92%;
+    --gradient-start: #7c3aed;
+    --gradient-end: #3b82f6;
+    --glow-color: rgba(124, 58, 237, 0.3);
+    --noise-opacity: 0.03;
+  }
+
+  .dark {
+    /* Dark Mode Tokens */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+    --card: 240 4% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 240 4% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 262 83% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 240 4% 12%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 240 4% 15%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 14%;
+    --input: 240 4% 14%;
+    --ring: 262 83% 68%;
+
+    /* Custom Design Tokens - Dark */
+    --surface-1: 0 0% 4%;
+    --surface-2: 240 4% 7%;
+    --surface-3: 240 4% 10%;
+    --glow-color: rgba(139, 92, 246, 0.4);
+    --noise-opacity: 0.05;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(124, 58, 237, 0.3);
+    color: inherit;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-subtle {
+    @apply bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  /* Glass Effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Noise Texture */
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    opacity: var(--noise-opacity);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Glow Effects */
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.35);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+  }
+
+  .glow-border {
+    box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.3), 0 0 20px rgba(124, 58, 237, 0.1);
+  }
+
+  /* Card Styles */
+  .card-premium {
+    @apply relative overflow-hidden rounded-2xl border border-white/5 bg-card;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-premium-hover {
+    @apply card-premium transition-all duration-300 hover:border-violet-500/20 hover:shadow-glow;
+  }
+
+  /* Section Styles */
+  .section-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-violet-400;
+  }
+
+  /* Animated Gradient Border */
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: 1rem;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(59, 130, 246, 0.4), transparent);
+    z-index: -1;
+  }
+
+  /* Shimmer Effect */
+  .shimmer-line {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  /* Typography Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .heading-display {
+    @apply text-5xl font-bold tracking-tight leading-tight sm:text-6xl lg:text-7xl;
+  }
+
+  /* Grid Background */
+  .bg-grid {
+    background-image: var(--tw-gradient-stops);
+    background-size: 40px 40px;
+  }
+
+  /* Spotlight */
+  .spotlight {
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(124, 58, 237, 0.08),
+      transparent 40%
+    );
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Perspective tilt */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  /* Text Shadow Glow */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  }
+}
+
+/* ============================================
+   COMPONENT STYLES
+   ============================================ */
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 rounded-xl bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-violet-500 hover:shadow-glow active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold backdrop-blur-sm transition-all duration-200 hover:bg-white/10 hover:border-white/20 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply relative inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-white/5 active:scale-95;
+  }
+
+  /* Tag/Pill Styles */
+  .tech-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-muted-foreground;
+  }
+
+  /* Timeline dot */
+  .timeline-dot {
+    @apply relative flex h-3 w-3 items-center justify-center;
+  }
+  .timeline-dot::before {
+    content: "";
+    @apply absolute h-full w-full rounded-full bg-violet-500 opacity-30 animate-ping;
+  }
+  .timeline-dot::after {
+    content: "";
+    @apply relative h-3 w-3 rounded-full bg-violet-500;
+  }
+}
+
+/* ============================================
+   ANIMATION OVERRIDES
+   ============================================ */
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+}
+
+/* Prevent transition flicker on load */
+.no-transition * {
+  transition: none !important;
+}
+
+/* Page transition overlay */
+.page-loader {
+  animation: fade-in 0.3s ease forwards;
+}

@@ -1,0 +1,888 @@
+export type Locale = "en" | "id" | "es" | "ja" | "fr";
+
+export const locales: { code: Locale; label: string; flag: string; name: string }[] = [
+  { code: "en", label: "EN", flag: "🇺🇸", name: "English" },
+  { code: "id", label: "ID", flag: "🇮🇩", name: "Bahasa Indonesia" },
+  { code: "es", label: "ES", flag: "🇪🇸", name: "Español" },
+  { code: "ja", label: "JA", flag: "🇯🇵", name: "日本語" },
+  { code: "fr", label: "FR", flag: "🇫🇷", name: "Français" },
+];
+
+export type TranslationKey = typeof translations.en;
+
+export const translations = {
+  en: {
+    nav: {
+      about: "About",
+      ventures: "Ventures",
+      work: "Work",
+      impact: "Impact",
+      contact: "Contact",
+      letsTalk: "Let's Talk",
+    },
+    hero: {
+      badge: "Nursing Student",
+      headline1: "Nursing student",
+      headline2: "who codes and",
+      headline3: "loves technology",
+      headlineAccent: "from Poltekkes Surabaya.",
+      description: "I'm a nursing student at Poltekkes Surabaya with a deep interest in coding and technology. I combine healthcare knowledge with a passion for software development, and love creating useful digital projects while studying nursing.",
+      ctaPrimary: "See My Projects",
+      ctaSecondary: "Contact Me",
+      roles: ["Nursing Student", "Tech Enthusiast", "Aspiring Developer", "Coding Hobbyist"],
+      profile: {
+        name: "Cleo Ameylia Salsabila",
+        title: "Nursing Student",
+        bio: "A curious learner and aspiring developer who loves both healthcare and coding. Creating projects that blend nursing and technology.",
+        location: "Surabaya, Indonesia",
+        downloadResume: "Download Resume",
+        available: "Available",
+      },
+    },
+    about: {
+      sectionLabel: "About Me",
+      headline: "I'm a",
+      headlineAccent: "nursing student, tech",
+      headline2: "enthusiast, and coder.",
+      description1: "As a nursing student at Poltekkes Surabaya, I explore both medical studies and the world of coding. My journey is about merging healthcare and technology to empower both professions.",
+      description2: "I believe learning is a lifelong journey—studying nursing by day and coding by night, building projects to solve real problems for healthcare and society.",
+      cta: "More About Me",
+      stats: {
+        companies: "Projects Made",
+        funding: "Scholarship Received",
+        users: "People Helped",
+        countries: "Communities Reached",
+      },
+    },
+    companies: {
+      sectionLabel: "Projects I've Built",
+      viewAll: "View All Projects",
+      status: {
+        Active: "Active",
+        Acquired: "Acquired",
+        Exited: "Exited",
+      },
+      items: [
+        {
+          name: "Nova Programming Language",
+          description: "A programming language that I created with the Python programming language that is able to run on the terminal side, able to create desktop apps with that programming language.",
+          period: "2026",
+          tags: ["Python"],
+        },
+        {
+          name: "CV Auto Generator",
+          description: "A platform where we can create a CV much more easily without styling, because templates suitable for CVs in general are already provided",
+          period: "2026",
+          tags: ["React", "Cloudinary", "Tailwind"],
+        },
+        {
+          name: "Memoire",
+          description: "A platform for storing images/videos/a memory so that it is safely stored and saves storage on the user's phone/device.",
+          period: "2026",
+          tags: ["Next.js", "Cloudinary", "Tailwind"],
+        },
+      ],
+    },
+    projects: {
+      sectionLabel: "Featured Work",
+      viewAll: "View All Projects",
+      viewProject: "View Project",
+    },
+    stats: {
+      sectionLabel: "Impact",
+      items: {
+        users: "Total Users",
+        arr: "ARR Generated",
+        uptime: "Uptime Achieved",
+        rating: "User Rating",
+        team: "Team Members",
+      },
+    },
+    timeline: {
+      sectionLabel: "My Journey",
+      headline: "Nursing and Coding",
+      headlineAccent: "growing together",
+      items: [
+        {
+          year: "2023",
+          title: "Started Nursing School",
+          description: "Began studies in nursing at Poltekkes Surabaya and learned the foundations of healthcare.",
+          tag: "Nursing",
+        },
+        {
+          year: "2024",
+          title: "First Coding Project",
+          description: "Built simple software projects to help students and healthcare peers.",
+          tag: "Coding",
+        },
+        {
+          year: "2025",
+          title: "Combining Nursing & Tech",
+          description: "Created apps and tools that blend medical knowledge with digital innovation.",
+          tag: "Healthtech",
+        },
+        {
+          year: "2026",
+          title: "Aspiring Healthtech Developer",
+          description: "Continued learning and building projects at the intersection of technology and nursing.",
+          tag: "Future Goals",
+        },
+      ],
+    },
+    services: {
+      sectionLabel: "What I Do",
+      items: [
+        {
+          title: "Nursing Care",
+          description: "I study nursing best practices to offer excellent care and support for patients.",
+        },
+        {
+          title: "Learning Coding",
+          description: "Exploring frontend and backend development, eager to create digital health solutions.",
+        },
+        {
+          title: "Health & Tech Projects",
+          description: "Building simple tools and sharing knowledge that helps nursing and student communities.",
+        },
+        {
+          title: "Collaboration",
+          description: "Open to teamwork and eager to connect with others passionate in nursing or coding.",
+        },
+        {
+          title: "Growth",
+          description: "Always learning, always improving—at both healthcare and programming.",
+        },
+        {
+          title: "Empathy & Innovation",
+          description: "Combining empathy from nursing with creativity in technology for real-world impact.",
+        },
+      ],
+    },
+    contact: {
+      sectionLabel: "Get In Touch",
+      availableBadge: "Available for new opportunities",
+      headline: "Ready to connect in nursing or tech?",
+      headlineAccent: "Let's create helpful projects together.",
+      description: "If you want to collaborate, share experiences, or need support in both nursing and technology, feel free to reach out. Together, we can inspire positive change.",
+      copied: "Copied!",
+      letsTalk: "Let's Talk",
+    },
+    footer: {
+      rights: "Cleo Portfolio.",
+      builtWith: "Built with Next.js &",
+    },
+    command: {
+      placeholder: "Type a command or search...",
+      noResults: "No results found.",
+      navigate: "Navigate",
+      links: "Links",
+      theme: "Theme",
+      light: "Light Mode",
+      dark: "Dark Mode",
+      system: "System",
+    },
+  },
+
+  id: {
+    nav: {
+      about: "Tentang Saya",
+      ventures: "Usaha",
+      work: "Karya",
+      impact: "Dampak",
+      contact: "Kontak",
+      letsTalk: "Hubungi",
+    },
+    hero: {
+      badge: "Mahasiswa Keperawatan",
+      headline1: "Mahasiswa keperawatan",
+      headline2: "yang suka coding",
+      headline3: "dan teknologi",
+      headlineAccent: "Poltekkes Surabaya.",
+      description: "Saya adalah mahasiswa keperawatan di Poltekkes Surabaya yang sangat berminat di dunia coding dan teknologi. Menggabungkan ilmu kesehatan dan kecintaan pada software development, saya suka membuat proyek-proyek digital sederhana di tengah kuliah keperawatan.",
+      ctaPrimary: "Lihat Proyek Saya",
+      ctaSecondary: "Hubungi Saya",
+      roles: [
+        "Mahasiswa Keperawatan",
+        "Peminat Teknologi",
+        "Calon Developer",
+        "Hobiis Coding",
+      ],
+      profile: {
+        name: "Cleo Ameylia Salsabila",
+        title: "Mahasiswa Keperawatan",
+        bio: "Pembelajar dengan rasa ingin tahu tinggi, bercita-cita menjadi perawat sekaligus developer. Suka memadukan ilmu kesehatan dan teknologi dalam berbagai karya.",
+        location: "Surabaya, Indonesia",
+        downloadResume: "Unduh Resumé",
+        available: "Tersedia",
+      },
+    },
+    about: {
+      sectionLabel: "Tentang Saya",
+      headline: "Saya adalah",
+      headlineAccent: "mahasiswa keperawatan,",
+      headline2: "pecinta teknologi & coding.",
+      description1: "Menempuh pendidikan keperawatan di Poltekkes Surabaya, saya suka mengeksplorasi dunia kesehatan dan teknologi sekaligus. Perjalanan ini tentang memadukan keduanya untuk saling memperkuat.",
+      description2: "Saya percaya belajar adalah perjalanan panjang—siang fokus ke keperawatan, malam eksplorasi kode. Tujuan saya, membuat karya bermanfaat bagi dunia kesehatan & masyarakat.",
+      cta: "Selengkapnya",
+      stats: {
+        companies: "Projek Dibuat",
+        funding: "Beasiswa Diterima",
+        users: "Orang Terbantu",
+        countries: "Komunitas Dijangkau",
+      },
+    },
+    companies: {
+      sectionLabel: "Projek yang Saya Bangun",
+      viewAll: "Lihat Semua Projek",
+      status: {
+        Active: "Aktif",
+        Acquired: "Diakuisisi",
+        Exited: "Keluar",
+      },
+      items: [
+        {
+          name: "Nova Programming Language",
+          description: "Bahasa pemrograman yang saya buat menggunakan Python, dapat dijalankan pada terminal, serta mampu membuat aplikasi desktop dengan bahasa tersebut.",
+          period: "2026",
+          tags: ["Python"],
+        },
+        {
+          name: "CV Auto Generator",
+          description: "Platform untuk membuat CV dengan mudah tanpa harus memikirkan desain, karena sudah disediakan template yang cocok untuk CV pada umumnya.",
+          period: "2026",
+          tags: ["React", "Cloudinary", "Tailwind"],
+        },
+        {
+          name: "Memoire",
+          description: "Platform untuk menyimpan gambar, video atau kenangan sehingga akan tersimpan dengan aman dan menghemat storage perangkat user.",
+          period: "2026",
+          tags: ["Next.js", "Cloudinary", "Tailwind"],
+        },
+      ],
+    },
+    projects: {
+      sectionLabel: "Karya Unggulan",
+      viewAll: "Lihat Semua Proyek",
+      viewProject: "Lihat Proyek",
+    },
+    stats: {
+      sectionLabel: "Dampak",
+      items: {
+        users: "Total Pengguna",
+        arr: "ARR Dihasilkan",
+        uptime: "Uptime Tercapai",
+        rating: "Rating Pengguna",
+        team: "Anggota Tim",
+      },
+    },
+    timeline: {
+      sectionLabel: "Perjalanan Saya",
+      headline: "Keperawatan & Coding",
+      headlineAccent: "beriringan berkembang",
+      items: [
+        {
+          year: "2023",
+          title: "Masuk Keperawatan",
+          description: "Mulai menempuh studi sebagai mahasiswa keperawatan di Poltekkes Surabaya, belajar dasar-dasar dunia kesehatan.",
+          tag: "Keperawatan",
+        },
+        {
+          year: "2024",
+          title: "Projek Coding Pertama",
+          description: "Membuat projek digital sederhana untuk membantu teman kuliah & sesama mahasiswa.",
+          tag: "Coding",
+        },
+        {
+          year: "2025",
+          title: "Menggabungkan Keperawatan & Teknologi",
+          description: "Membuat aplikasi & alat sederhana yang menghubungkan ilmu kesehatan dengan inovasi digital.",
+          tag: "Healthtech",
+        },
+        {
+          year: "2026",
+          title: "Calon Developer Bidang Kesehatan",
+          description: "Terus belajar dan membangun karya di persimpangan teknologi dan keperawatan.",
+          tag: "Cita-cita",
+        },
+      ],
+    },
+    services: {
+      sectionLabel: "Yang Saya Lakukan",
+      items: [
+        {
+          title: "Perawatan Pasien",
+          description: "Belajar praktik keperawatan terbaik untuk memberikan dukungan dan layanan kesehatan maksimal.",
+        },
+        {
+          title: "Belajar Coding",
+          description: "Mengeksplorasi frontend & backend development, tertarik menciptakan solusi digital untuk kesehatan.",
+        },
+        {
+          title: "Projek Kesehatan & Teknologi",
+          description: "Membangun alat sederhana & berbagi pengetahuan untuk komunitas mahasiswa dan keperawatan.",
+        },
+        {
+          title: "Kolaborasi",
+          description: "Siap bekerja sama, terbuka untuk siapa saja yang ingin belajar keperawatan atau coding.",
+        },
+        {
+          title: "Berkembang",
+          description: "Selalu belajar, selalu memperbaiki diri—baik di bidang kesehatan maupun pemrograman.",
+        },
+        {
+          title: "Empati & Inovasi",
+          description: "Menggabungkan empati bidang keperawatan dengan kreativitas di dunia teknologi untuk dampak nyata.",
+        },
+      ],
+    },
+    contact: {
+      sectionLabel: "Hubungi Saya",
+      availableBadge: "Tersedia untuk peluang baru",
+      headline: "Yuk terhubung soal keperawatan dan coding!",
+      headlineAccent: "Mari ciptakan karya bermanfaat bersama.",
+      description: "Kalau ingin kolaborasi, berbagi pengalaman, atau butuh support seputar keperawatan dan teknologi, silakan hubungi saya. Bersama kita bisa bawa dampak positif.",
+      copied: "Disalin!",
+      letsTalk: "Hubungi",
+    },
+    footer: {
+      rights: "Cleo Portofolio.",
+      builtWith: "Dibangun dengan Next.js &",
+    },
+    command: {
+      placeholder: "Ketik perintah atau cari...",
+      noResults: "Tidak ada hasil.",
+      navigate: "Navigasi",
+      links: "Tautan",
+      theme: "Tema",
+      light: "Mode Terang",
+      dark: "Mode Gelap",
+      system: "Sistem",
+    },
+  },
+
+  es: {
+    nav: {
+      about: "Sobre mí",
+      ventures: "Proyectos",
+      work: "Trabajos",
+      impact: "Impacto",
+      contact: "Contacto",
+      letsTalk: "Hablemos",
+    },
+    hero: {
+      badge: "Estudiante de Enfermería",
+      headline1: "Estudiante de enfermería",
+      headline2: "apasionada por el código",
+      headline3: "y la tecnología",
+      headlineAccent: "de Poltekkes Surabaya.",
+      description: "Soy estudiante de enfermería en Poltekkes Surabaya con un gran interés en el desarrollo de software y la tecnología. Me gusta crear pequeños proyectos digitales mientras estudio el cuidado de la salud y aspiro a unir ambas disciplinas.",
+      ctaPrimary: "Ver Mis Proyectos",
+      ctaSecondary: "Contáctame",
+      roles: [
+        "Estudiante de Enfermería",
+        "Amante de la Tecnología",
+        "Desarrolladora Aspirante",
+        "Programadora por Hobby",
+      ],
+      profile: {
+        name: "Cleo Ameylia Salsabila",
+        title: "Estudiante de Enfermería",
+        bio: "Aprendiz curiosa y futura desarrolladora, fusionando la enfermería y la tecnología en cada nuevo proyecto.",
+        location: "Surabaya, Indonesia",
+        downloadResume: "Descargar CV",
+        available: "Disponible",
+      },
+    },
+    about: {
+      sectionLabel: "Sobre Mí",
+      headline: "Soy estudiante de",
+      headlineAccent: "enfermería, tecnológica",
+      headline2: "y amante de la programación.",
+      description1: "Como estudiante de enfermería en Poltekkes Surabaya, exploro el mundo de la salud y el desarrollo digital. Me apasiona unir ambas áreas y crear proyectos útiles para la comunidad.",
+      description2: "Creo que el aprendizaje nunca termina—por la mañana me dedico a la enfermería, por la noche desarrollo software y proyectos que aportan valor a pacientes y estudiantes.",
+      cta: "Más Sobre Mí",
+      stats: {
+        companies: "Proyectos Realizados",
+        funding: "Becas Logradas",
+        users: "Personas Ayudadas",
+        countries: "Comunidades Alcanzadas",
+      },
+    },
+    companies: {
+      sectionLabel: "Proyectos que He Creado",
+      viewAll: "Ver Todos los Proyectos",
+      status: {
+        Active: "Activo",
+        Acquired: "Adquirido",
+        Exited: "Salida",
+      },
+      items: [
+        {
+          name: "Nova Programming Language",
+          description: "Un lenguaje de programación que creé con Python y que puede ejecutarse en la terminal, así como crear aplicaciones de escritorio con ese mismo lenguaje.",
+          period: "2026",
+          tags: ["Python"],
+        },
+        {
+          name: "CV Auto Generator",
+          description: "Una plataforma donde podemos crear un CV mucho más fácilmente sin preocuparnos por el diseño, ya que se proporcionan plantillas adecuadas para currículums en general.",
+          period: "2026",
+          tags: ["React", "Cloudinary", "Tailwind"],
+        },
+        {
+          name: "Memoire",
+          description: "Una plataforma para almacenar imágenes, videos o recuerdos para que se guarden de forma segura y ahorren espacio de almacenamiento en el dispositivo del usuario.",
+          period: "2026",
+          tags: ["Next.js", "Cloudinary", "Tailwind"],
+        },
+      ],
+    },
+    projects: {
+      sectionLabel: "Trabajo Destacado",
+      viewAll: "Ver Todos los Proyectos",
+      viewProject: "Ver Proyecto",
+    },
+    stats: {
+      sectionLabel: "Impacto",
+      items: {
+        users: "Usuarios Totales",
+        arr: "ARR Generado",
+        uptime: "Uptime Logrado",
+        rating: "Valoración",
+        team: "Miembros del Equipo",
+      },
+    },
+    timeline: {
+      sectionLabel: "Mi Trayectoria",
+      headline: "Enfermería y programación",
+      headlineAccent: "creciendo juntas",
+      items: [
+        {
+          year: "2023",
+          title: "Inicio en Enfermería",
+          description: "Inicié mis estudios en enfermería en Poltekkes Surabaya y aprendí bases de atención sanitaria.",
+          tag: "Enfermería",
+        },
+        {
+          year: "2024",
+          title: "Primer Proyecto de Código",
+          description: "Desarrollé pequeños proyectos digitales para ayudar a compañeras y estudiantes del área.",
+          tag: "Programación",
+        },
+        {
+          year: "2025",
+          title: "Integrando Salud y Tecnología",
+          description: "Creé apps y herramientas sencillas que combinan el conocimiento médico con la innovación digital.",
+          tag: "Healthtech",
+        },
+        {
+          year: "2026",
+          title: "Futura Desarrolladora HealthTech",
+          description: "Sigo aprendiendo y construyendo proyectos que unen enfermería y tecnología.",
+          tag: "Metas Futuras",
+        },
+      ],
+    },
+    services: {
+      sectionLabel: "Lo Que Hago",
+      items: [
+        {
+          title: "Cuidado de Enfermería",
+          description: "Estudio las mejores prácticas para dar una atención sanitaria de calidad y apoyar a pacientes.",
+        },
+        {
+          title: "Aprender a Programar",
+          description: "Explorando desarrollo frontend y backend, con ganas de crear soluciones digitales para la salud.",
+        },
+        {
+          title: "Proyectos de Salud y Tecnología",
+          description: "Construyo herramientas útiles y comparto conocimientos para estudiantes y comunidad de enfermería.",
+        },
+        {
+          title: "Colaboración",
+          description: "Abierta al trabajo en equipo, me encanta conectar con quienes sean apasionados por la salud o el código.",
+        },
+        {
+          title: "Crecimiento",
+          description: "Siempre aprendiendo y mejorando tanto en salud como en programación.",
+        },
+        {
+          title: "Empatía e Innovación",
+          description: "Combinando la empatía de la enfermería con la creatividad de la tecnología para impactar positivamente.",
+        },
+      ],
+    },
+    contact: {
+      sectionLabel: "Contacto",
+      availableBadge: "Disponible para nuevas oportunidades",
+      headline: "¿Listo para conectar salud y tecnología?",
+      headlineAccent: "Construyamos proyectos útiles juntos.",
+      description: "¿Te gustaría colaborar, intercambiar experiencias o necesitas apoyo en enfermería o programación? Escríbeme y creemos un cambio positivo en la comunidad.",
+      copied: "¡Copiado!",
+      letsTalk: "Hablemos",
+    },
+    footer: {
+      rights: "Portafolio de Cleo.",
+      builtWith: "Construido con Next.js &",
+    },
+    command: {
+      placeholder: "Escribe un comando o busca...",
+      noResults: "Sin resultados.",
+      navigate: "Navegar",
+      links: "Enlaces",
+      theme: "Tema",
+      light: "Modo Claro",
+      dark: "Modo Oscuro",
+      system: "Sistema",
+    },
+  },
+
+  ja: {
+    nav: {
+      about: "について",
+      ventures: "事業",
+      work: "作品",
+      impact: "実績",
+      contact: "連絡",
+      letsTalk: "話しましょう",
+    },
+    hero: {
+      badge: "看護学生",
+      headline1: "看護学生で",
+      headline2: "プログラミングが好き",
+      headline3: "テクノロジーにも夢中",
+      headlineAccent: "ポリテクヌス スラバヤ",
+      description: "私はポリテクヌススラバヤの看護学生です。医療の勉強と同時に、プログラミングやテクノロジーにも熱中しています。看護とITをつなぐ作品づくりに挑戦中です。",
+      ctaPrimary: "作品一覧を見る",
+      ctaSecondary: "連絡する",
+      roles: ["看護学生", "テック好き", "初心者プログラマー", "趣味でコードを書く人"],
+      profile: {
+        name: "Cleo Ameylia Salsabila",
+        title: "看護学生",
+        bio: "好奇心旺盛な学び手。看護とITの両方を愛し、両分野を融合した作品づくりを目指しています。",
+        location: "スラバヤ, インドネシア",
+        downloadResume: "履歴書をダウンロード",
+        available: "募集中",
+      },
+    },
+    about: {
+      sectionLabel: "自己紹介",
+      headline: "私は",
+      headlineAccent: "看護学生、テクノロジー好き、",
+      headline2: "そしてコードを楽しむ人です。",
+      description1: "ポリテクヌススラバヤで看護を学びながら、医療とデジタルの世界を行き来しています。2つの分野をつなげて、社会への貢献を目指しています。",
+      description2: "勉強は一生続くもの——昼は看護、夜はプログラミング。看護現場や学生同士で役立つものを作っています。",
+      cta: "もっと詳しく",
+      stats: {
+        companies: "制作した作品数",
+        funding: "奨学金",
+        users: "支援した人",
+        countries: "支えたコミュニティ",
+      },
+    },
+    companies: {
+      sectionLabel: "自作プロジェクト",
+      viewAll: "全プロジェクトを見る",
+      status: {
+        Active: "稼働中",
+        Acquired: "取得",
+        Exited: "完了",
+      },
+      items: [
+        {
+          name: "Nova Programming Language",
+          description: "Pythonで作成したプログラミング言語で、ターミナル操作やデスクトップアプリ作成も可能。",
+          period: "2024年",
+          tags: ["Python"],
+        },
+        {
+          name: "CV Auto Generator",
+          description: "汎用的なテンプレートが用意されており、手軽にスタイリング不要でCVを作成できるプラットフォーム。",
+          period: "2025年",
+          tags: ["React", "Cloudinary", "Tailwind"],
+        },
+        {
+          name: "Memoire",
+          description: "画像・動画・思い出を安全に保存し、ユーザー端末のストレージも節約できるプラットフォーム。",
+          period: "2026年",
+          tags: ["Next.js", "Cloudinary", "Tailwind"],
+        },
+      ],
+    },
+    projects: {
+      sectionLabel: "注目の作品",
+      viewAll: "全作品を見る",
+      viewProject: "プロジェクトを見る",
+    },
+    stats: {
+      sectionLabel: "実績",
+      items: {
+        users: "総ユーザー数",
+        arr: "ARR",
+        uptime: "稼働率",
+        rating: "ユーザー評価",
+        team: "チームメンバー",
+      },
+    },
+    timeline: {
+      sectionLabel: "私の歩み",
+      headline: "看護とITで",
+      headlineAccent: "ともに成長",
+      items: [
+        {
+          year: "2023年",
+          title: "看護学生として入学",
+          description: "ポリテクヌススラバヤで看護の勉強を開始。医療の基礎を学ぶ。",
+          tag: "看護",
+        },
+        {
+          year: "2024年",
+          title: "最初のプログラム制作",
+          description: "同級生を助ける小さなソフトやツールを独学で制作。",
+          tag: "プログラミング",
+        },
+        {
+          year: "2025年",
+          title: "看護×テクノロジー挑戦",
+          description: "医療知識とデジタルの力を活かしたツールやアプリを開発。",
+          tag: "ヘルステック",
+        },
+        {
+          year: "2026年",
+          title: "ヘルステック志望",
+          description: "看護とITの融合を追究し続け、社会に役立つものを生み出す。",
+          tag: "将来目標",
+        },
+      ],
+    },
+    services: {
+      sectionLabel: "できること",
+      items: [
+        {
+          title: "看護ケア",
+          description: "患者さんへの最善なケアやサポートのため看護技術を日々学習中。",
+        },
+        {
+          title: "プログラミング学習",
+          description: "フロントエンドやバックエンドを独学し、医療に役立つアプリ作りを目指す。",
+        },
+        {
+          title: "ヘルス＆テックプロジェクト",
+          description: "看護学生や医療現場向けに役立つ小さなツールや情報を制作・発信。",
+        },
+        {
+          title: "コラボレーション",
+          description: "看護やコードが好きな人とつながり、協力し合いたい気持ちがあります。",
+        },
+        {
+          title: "成長意欲",
+          description: "医療もITも常に学び、より良く成長し続けることを大切にしています。",
+        },
+        {
+          title: "共感と発想力",
+          description: "看護の共感力とITの創造性をあわせて、社会に役立つインパクトを目指します。",
+        },
+      ],
+    },
+    contact: {
+      sectionLabel: "お問い合わせ",
+      availableBadge: "新しい機会を募集中",
+      headline: "看護もITもつながろう！",
+      headlineAccent: "一緒に役立つ作品を作ろう。",
+      description: "看護やテクノロジー、コラボ希望やご質問があればお気軽にご連絡ください！一緒に楽しく成長していきましょう。",
+      copied: "コピーしました！",
+      letsTalk: "話しましょう",
+    },
+    footer: {
+      rights: "クレオのポートフォリオ。",
+      builtWith: "Next.js & で構築",
+    },
+    command: {
+      placeholder: "コマンドを入力または検索...",
+      noResults: "結果が見つかりません。",
+      navigate: "ナビゲート",
+      links: "リンク",
+      theme: "テーマ",
+      light: "ライトモード",
+      dark: "ダークモード",
+      system: "システム",
+    },
+  },
+
+  fr: {
+    nav: {
+      about: "À propos",
+      ventures: "Ventures",
+      work: "Travaux",
+      impact: "Impact",
+      contact: "Contact",
+      letsTalk: "Parlons",
+    },
+    hero: {
+      badge: "Étudiante en soins infirmiers",
+      headline1: "Étudiante en soins",
+      headline2: "passionnée de code",
+      headline3: "et des nouvelles technologies",
+      headlineAccent: "à Poltekkes Surabaya.",
+      description: "Je suis étudiante en soins infirmiers à Poltekkes Surabaya, très motivée par le développement informatique. Je combine mes connaissances en santé avec ma passion pour la création numérique, en réalisant de petits projets utiles durant mes études.",
+      ctaPrimary: "Voir mes projets",
+      ctaSecondary: "Me contacter",
+      roles: [
+        "Étudiante en Soins Infirmiers",
+        "Passionnée de Technologie",
+        "Future Développeuse",
+        "Autodidacte du Code",
+      ],
+      profile: {
+        name: "Cleo Ameylia Salsabila",
+        title: "Étudiante en Soins Infirmiers",
+        bio: "Curieuse, créatrice et désireuse d’associer santé et informatique dans chaque nouveau projet.",
+        location: "Surabaya, Indonésie",
+        downloadResume: "Télécharger le CV",
+        available: "Disponible",
+      },
+    },
+    about: {
+      sectionLabel: "À Propos",
+      headline: "Je suis une",
+      headlineAccent: "étudiante infirmière et",
+      headline2: "passionnée par la technologie.",
+      description1: "Étudiante en soins infirmiers à Poltekkes Surabaya, j’explore le domaine de la santé et du numérique, créant des projets qui profitent à la communauté.",
+      description2: "Pour moi, apprendre est un parcours sans fin—le jour dans le milieu médical, le soir au clavier pour coder ! J’aspire à relier technologie et soins au profit du plus grand nombre.",
+      cta: "En savoir plus",
+      stats: {
+        companies: "Projets Réalisés",
+        funding: "Bourses Obtenues",
+        users: "Personnes Aidées",
+        countries: "Communautés Touchées",
+      },
+    },
+    companies: {
+      sectionLabel: "Projets que J'ai Conçus",
+      viewAll: "Voir Tous les Projets",
+      status: {
+        Active: "Actif",
+        Acquired: "Acquis",
+        Exited: "Sortie",
+      },
+      items: [
+        {
+          name: "Nova Programming Language",
+          description: "Un langage de programmation créé avec Python capable d’être exécuté en terminal et de réaliser des applications desktop.",
+          period: "2022",
+          tags: ["Python"],
+        },
+        {
+          name: "CV Auto Generator",
+          description: "Une plateforme où l’on peut créer un CV très facilement sans mise en page : de nombreux templates sont déjà fournis.",
+          period: "2023",
+          tags: ["React", "Cloudinary", "Tailwind"],
+        },
+        {
+          name: "Memoire",
+          description: "Plateforme pour stocker des images, vidéos ou souvenirs de façon sécurisée tout en économisant l’espace de stockage de l’utilisateur.",
+          period: "2026",
+          tags: ["Next.js", "Cloudinary", "Tailwind"],
+        },
+      ],
+    },
+    projects: {
+      sectionLabel: "Travaux Sélectionnés",
+      viewAll: "Voir Tous les Projets",
+      viewProject: "Voir le Projet",
+    },
+    stats: {
+      sectionLabel: "Impact",
+      items: {
+        users: "Utilisateurs Totaux",
+        arr: "ARR Généré",
+        uptime: "Disponibilité",
+        rating: "Note Utilisateur",
+        team: "Membres d'Équipe",
+      },
+    },
+    timeline: {
+      sectionLabel: "Mon Parcours",
+      headline: "Études & code",
+      headlineAccent: "des passions complémentaires",
+      items: [
+        {
+          year: "2023",
+          title: "Début d'études en soins",
+          description: "Entrée à Poltekkes Surabaya pour y apprendre les bases des soins infirmiers.",
+          tag: "Soins",
+        },
+        {
+          year: "2024",
+          title: "Premier projet digital",
+          description: "Création de petits outils logiciels pour aider les camarades et la communauté étudiante.",
+          tag: "Programmation",
+        },
+        {
+          year: "2025",
+          title: "Santé & technologie",
+          description: "Développement d’applications et d’outils unissant expertise médicale et innovation numérique.",
+          tag: "Healthtech",
+        },
+        {
+          year: "2026",
+          title: "Ambition développeuse santé",
+          description: "Poursuite de projets à la croisée entre l’informatique et les soins infirmiers.",
+          tag: "Objectif futur",
+        },
+      ],
+    },
+    services: {
+      sectionLabel: "Ce Que Je Fais",
+      items: [
+        {
+          title: "Soins infirmiers",
+          description: "Étudier la pratique soignante afin d’offrir un soutien optimal aux patients.",
+        },
+        {
+          title: "Apprentissage du code",
+          description: "M’initier au développement web/backend, créer des solutions numériques pour la santé.",
+        },
+        {
+          title: "Projet santé & technologie",
+          description: "Réaliser de petits outils et transmettre des connaissances à la communauté étudiante et soignante.",
+        },
+        {
+          title: "Collaboration",
+          description: "Ouverte au travail en équipe avec passionnés des soins ou du code.",
+        },
+        {
+          title: "Évolution continue",
+          description: "Toujours apprendre, progresser, que ce soit en santé ou en informatique.",
+        },
+        {
+          title: "Empathie & innovation",
+          description: "Mêler empathie soignante et créativité numérique pour un impact réel.",
+        },
+      ],
+    },
+    contact: {
+      sectionLabel: "Contact",
+      availableBadge: "Disponible pour de nouvelles opportunités",
+      headline: "Connectons soins & code !",
+      headlineAccent: "Construisons des projets utiles ensemble.",
+      description: "Pour toute collaboration, échange d’expérience ou question en santé ou numérique, contactez-moi ! Ensemble, contribuons à un monde meilleur.",
+      copied: "Copié !",
+      letsTalk: "Parlons",
+    },
+    footer: {
+      rights: "Portfolio de Cleo.",
+      builtWith: "Construit avec Next.js &",
+    },
+    command: {
+      placeholder: "Tapez une commande ou recherchez...",
+      noResults: "Aucun résultat.",
+      navigate: "Naviguer",
+      links: "Liens",
+      theme: "Thème",
+      light: "Mode Clair",
+      dark: "Mode Sombre",
+      system: "Système",
+    },
+  },
+} as const;
