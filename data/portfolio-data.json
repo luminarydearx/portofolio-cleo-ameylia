@@ -1,5 +1,5 @@
 {
-  "profileImage": "https://res.cloudinary.com/dg3awuzug/image/upload/v1779138053/ews8s4pgqgh1go6zakyr.jpg",
+  "profileImage": "",
   "socialLinks": {
     "instagram": "https://www.instagram.com/dederrfeb/",
     "email": "dearlyfebrianoi@gmail.com",
@@ -7,20 +7,6 @@
     "resume": "/resume.pdf"
   },
   "projects": [
-    {
-      "id": 1,
-      "title": "Nova Programming Language",
-      "tags": [
-        "Python"
-      ],
-      "github": "https://github.com/luminarydearx/Nova-Language",
-      "demo": "",
-      "stars": "74",
-      "gradient": "from-violet-500/20 via-purple-500/10 to-transparent",
-      "screenColor": "bg-violet-950/50",
-      "metricValue": "127",
-      "metricLabel": "Active Users"
-    },
     {
       "id": 2,
       "title": "CV Auto Generator",
