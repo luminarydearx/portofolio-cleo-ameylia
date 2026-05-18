@@ -91,7 +91,9 @@ function DashboardContent() {
   const [mounted, setMounted] = useState(false);
   
   const [data, setData] = useState<PortfolioData | null>(null);
+  const [originalData, setOriginalData] = useState<PortfolioData | null>(null);
   const [translations, setTranslations] = useState<TranslationsData | null>(null);
+  const [originalTranslations, setOriginalTranslations] = useState<TranslationsData | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -116,9 +118,14 @@ function DashboardContent() {
         fetch("/api/data"),
         fetch("/api/translations"),
       ]);
-      setData(await dataRes.json());
+      const d = await dataRes.json();
+      setData(d);
+      setOriginalData(JSON.parse(JSON.stringify(d)));
       const t = await transRes.json();
-      if (t && !t.error) setTranslations(t);
+      if (t && !t.error) {
+        setTranslations(t);
+        setOriginalTranslations(JSON.parse(JSON.stringify(t)));
+      }
     } catch (e) { console.error(e); }
     setLoading(false);
   }, []);
@@ -178,6 +185,8 @@ function DashboardContent() {
           body: JSON.stringify(translations),
         });
       }
+      setOriginalData(JSON.parse(JSON.stringify(data)));
+      if (translations) setOriginalTranslations(JSON.parse(JSON.stringify(translations)));
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
     } catch (e) { console.error(e); }
@@ -296,6 +305,8 @@ function DashboardContent() {
     }
     return typeof obj === "string" ? obj : "";
   };
+
+  const hasChanges = JSON.stringify(data) !== JSON.stringify(originalData) || JSON.stringify(translations) !== JSON.stringify(originalTranslations);
 
   if (loading || !data || !mounted) {
     return (
@@ -678,6 +689,29 @@ function DashboardContent() {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* FLOATING SAVE BAR */}
+      <AnimatePresence>
+        {hasChanges && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 rounded-full bg-foreground px-6 py-3 shadow-2xl"
+          >
+            <span className="text-sm font-medium text-background hidden sm:inline-block">Ada perubahan belum disimpan</span>
+            <span className="text-sm font-medium text-background sm:hidden">Belum disimpan</span>
+            <button
+              onClick={saveData}
+              disabled={saving}
+              className="flex items-center gap-2 rounded-full bg-violet-500 px-4 py-1.5 text-sm font-semibold text-white hover:bg-violet-600 transition-colors whitespace-nowrap"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+              {saving ? "Menyimpan..." : "Simpan Semua"}
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* HIGHLIGHT PREVIEW MODAL */}
       <AnimatePresence>
