@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
           }
           
           const data = await res.json();
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const translatedText = data[0].map((item: any) => item[0]).join("");
           results[lang] = translatedText;
         } catch (err) {
