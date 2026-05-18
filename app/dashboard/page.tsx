@@ -79,7 +79,9 @@ function Textarea({ label, value, onChange, rows = 3, isTranslating, onPreview }
   );
 }
 
-export default function DashboardPage() {
+import { Suspense } from "react";
+
+function DashboardContent() {
   const searchParams = useSearchParams();
   const tab = searchParams.get("tab") || "overview";
   const { theme, setTheme } = useTheme();
@@ -722,5 +724,13 @@ export default function DashboardPage() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><Loader2 className="h-8 w-8 animate-spin text-violet-500" /></div>}>
+      <DashboardContent />
+    </Suspense>
   );
 }
