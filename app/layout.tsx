@@ -57,12 +57,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased min-h-screen`}
+        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased min-h-screen overflow-x-hidden`}
         suppressHydrationWarning
       >
         <Providers>{children}</Providers>

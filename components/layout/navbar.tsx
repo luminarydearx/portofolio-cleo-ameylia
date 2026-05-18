@@ -94,13 +94,13 @@ export function Navbar() {
             }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 shrink-0 min-w-0"
           >
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 text-white text-xs font-bold shadow-glow-sm">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-violet-600 text-white text-xs font-bold shadow-glow-sm">
               A/
             </div>
-            <span className="text-sm font-semibold tracking-tight">
-              Cleo Ameylia Salsabila
+            <span className="text-sm font-semibold tracking-tight truncate max-w-[120px] sm:max-w-none">
+              Cleo Ameylia
             </span>
           </motion.button>
 
