@@ -1,100 +1,43 @@
-# Cleo Ameylia Salsabila — Premium Portfolio
+# Portfolio Cleo Ameylia - Dynamic CMS
 
-A world-class startup founder portfolio built with Next.js 15, Framer Motion, and Tailwind CSS.  
-Includes a full **5-language switcher**, dark/light theme system, and CMD+K command palette.
+A modern, highly dynamic portfolio website built with Next.js 15, Tailwind CSS, Framer Motion, and a fully functional custom CMS Dashboard.
 
-## 🚀 Quick Start
+## 🚀 Features
 
-```bash
-npm install
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000)
+- **Dynamic Content Management:** Edit projects, stats, timeline, and hero content directly from the `/dashboard`.
+- **AI-Powered Translations:** Automatically translates your content to 5 different languages using Google Translate API.
+- **Smart Highlighter:** Live-preview the element you are editing directly in the dashboard with a neon yellow highlighter.
+- **GitHub API Integration (Serverless CMS):** Edits made in the production Vercel dashboard are pushed directly to this GitHub repository via the GitHub REST API, instantly triggering a Vercel redeployment to keep data permanent!
+- **Cloudinary Integration:** Fully supports uploading custom images and PDF resumes directly to the cloud.
 
-## 🌐 Languages Supported
+## 🛠️ Vercel Deployment Guide (Important!)
 
-| Flag | Code | Name             |
-|------|------|------------------|
-| 🇺🇸  | en   | English          |
-| 🇮🇩  | id   | Bahasa Indonesia |
-| 🇪🇸  | es   | Español          |
-| 🇯🇵  | ja   | 日本語            |
-| 🇫🇷  | fr   | Français         |
+Because this portfolio uses a file-based data storage system (`portfolio-data.json`), standard Vercel deployments will reset any changes you make in the dashboard because Vercel environments are **Read-Only**.
 
-Language is auto-detected from the browser, and persisted to localStorage.
+To fix this, we integrated a GitHub Push system. You **MUST** add these Environment Variables in your Vercel Dashboard (`Settings -> Environment Variables`):
 
-## ✨ Features
+- `GITHUB_TOKEN`: Your GitHub Personal Access Token (Requires `repo` scope).
+- `GITHUB_REPO`: `luminarydearx/portofolio-cleo-ameylia`
+- `GITHUB_BRANCH`: `master`
 
-| Feature                        | Status |
-|-------------------------------|--------|
-| 🌗 Dark / Light / System theme | ✅     |
-| 🌐 5-language switcher         | ✅     |
-| ⌨️ CMD+K Command Palette        | ✅     |
-| 📊 Animated Stats Counters     | ✅     |
-| 🎭 Framer Motion Animations    | ✅     |
-| 🔮 Glassmorphism Navbar        | ✅     |
-| ✨ Particle Canvas Effect       | ✅     |
-| 🖱️ Mouse Cursor Glow           | ✅     |
-| 📈 Scroll Progress Bar         | ✅     |
-| 🎯 Mouse Spotlight Effect      | ✅     |
-| 📱 Fully Responsive            | ✅     |
-| 🧭 Active Section Tracking     | ✅     |
-| 📋 Email Copy Interaction      | ✅     |
-| 🚀 Orbit Ring Animation        | ✅     |
-| 🌀 Animated Background Grid    | ✅     |
+**After adding these, make sure to manually click "Redeploy" in Vercel once so the app can load these tokens!** Once deployed, every save from the Dashboard will automatically commit to GitHub and trigger a fresh build.
 
-## 📁 Project Structure
+## 💻 Local Development
 
-```
-portfolio/
-├── app/
-│   ├── globals.css          # Design tokens & global styles
-│   ├── layout.tsx           # Root layout with Geist font
-│   ├── page.tsx             # Main page composition
-│   └── providers.tsx        # Theme + Language providers
-├── contexts/
-│   └── language-context.tsx # Language state & useLanguage() hook
-├── components/
-│   ├── effects/             # Particles, Spotlight, Grid bg
-│   ├── layout/              # Navbar (with language toggle), Footer
-│   ├── sections/            # Hero, About, Companies, Projects,
-│   │                        # Stats, Timeline, Services, Contact
-│   └── ui/                  # AnimatedCounter, CommandMenu,
-│                            # CursorGlow, LanguageToggle,
-│                            # ScrollProgress, ThemeToggle
-├── hooks/
-│   ├── use-magnetic.ts
-│   └── use-scroll.ts
-└── lib/
-    ├── translations.ts      # All strings for 5 languages
-    └── utils.ts
-```
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Access `http://localhost:3000` for the portfolio and `http://localhost:3000/dashboard` for the CMS.
 
-## 🎨 Customization
+## 🎨 Technologies Used
 
-### Change Personal Info
-Edit data inside each section component under `components/sections/`.
-
-### Add a New Language
-In `lib/translations.ts`:
-1. Add to `locales` array: `{ code: "de", label: "DE", flag: "🇩🇪", name: "Deutsch" }`
-2. Add a matching `de: { ... }` block to `translations`
-3. Update the `Locale` type: `"en" | "id" | "es" | "ja" | "fr" | "de"`
-
-### Add Profile Photo
-Place `profile.jpg` in `/public/`, then in `hero.tsx` replace the emoji placeholder
-with `<Image src="/profile.jpg" alt="Cleo Ameylia Salsabila" fill className="object-cover" />`.
-
-## 🔧 Tech Stack
-
-- **Next.js 15** — App Router, Server Components
-- **TypeScript** — Strict mode
-- **Tailwind CSS 3.4** — Custom design token system
-- **Framer Motion 11** — Animations & transitions
-- **next-themes** — Dark / Light / System theme
-- **Geist** — Premium Vercel font
-- **Lucide React** — Icon library
-- **cmdk** — CMD+K command palette
-
-## 📄 License
-MIT — Free to use as your own portfolio.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
