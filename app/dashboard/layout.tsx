@@ -33,7 +33,9 @@ const sidebarItems = [
   { label: "Profile Image", icon: ImageIcon, href: "/dashboard?tab=image", id: "image" },
 ];
 
-export default function DashboardLayout({
+import { Suspense } from "react";
+
+function LayoutContent({
   children,
 }: {
   children: React.ReactNode;
@@ -188,5 +190,17 @@ export default function DashboardLayout({
         </main>
       </div>
     </div>
+  );
+}
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <LayoutContent>{children}</LayoutContent>
+    </Suspense>
   );
 }
