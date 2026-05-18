@@ -80,9 +80,40 @@ export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
     const fileContent = generateTranslationsFile(body);
-    fs.writeFileSync(TRANSLATIONS_PATH, fileContent, "utf-8");
+    
+    if (process.env.GITHUB_TOKEN && process.env.GITHUB_REPO) {
+      const repo = process.env.GITHUB_REPO;
+      const branch = process.env.GITHUB_BRANCH || "master";
+      const filePath = "lib/translations.ts";
+      
+      const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`, {
+        headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: "application/vnd.github.v3+json" },
+      });
+      
+      let sha = "";
+      if (getRes.ok) {
+        const getJson = await getRes.json();
+        sha = getJson.sha;
+      }
+      
+      const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: "application/vnd.github.v3+json" },
+        body: JSON.stringify({
+          message: "Update translations via CMS",
+          content: Buffer.from(fileContent).toString("base64"),
+          sha: sha || undefined,
+          branch,
+        }),
+      });
+      
+      if (!putRes.ok) throw new Error("Failed to push to GitHub");
+    } else {
+      fs.writeFileSync(TRANSLATIONS_PATH, fileContent, "utf-8");
+    }
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error(err);
     return NextResponse.json({ error: "Failed to write" }, { status: 500 });
   }
 }
