@@ -21,7 +21,7 @@ export const translations = {
       letsTalk: "Let's Talk",
     },
     hero: {
-      badge: "Nursing Student",
+      badge: "Nursing Students",
       headline1: "Nursing student",
       headline2: "who codes and",
       headline3: "loves technology",
@@ -370,7 +370,7 @@ export const translations = {
       letsTalk: "Hablemos",
     },
     hero: {
-      badge: "Estudiante de Enfermería",
+      badge: "Estudiantes de enfermería",
       headline1: "Estudiante de enfermería",
       headline2: "apasionada por el código",
       headline3: "y la tecnología",
@@ -719,7 +719,7 @@ export const translations = {
       letsTalk: "Parlons",
     },
     hero: {
-      badge: "Étudiante en soins infirmiers",
+      badge: "Étudiants en soins infirmiers",
       headline1: "Étudiante en soins",
       headline2: "passionnée de code",
       headline3: "et des nouvelles technologies",
