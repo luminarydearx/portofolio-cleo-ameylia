@@ -493,6 +493,7 @@ function DashboardContent() {
                     </div>
                     <Input label="Headline 1" isTranslating={translatingFields["hero.headline1"]} value={getTranslation(locale, "hero.headline1")} onChange={(v) => updateTranslation(locale, "hero.headline1", v)} onPreview={() => setPreviewPath("hero.headline1")} />
                     <Input label="Headline 2" isTranslating={translatingFields["hero.headline2"]} value={getTranslation(locale, "hero.headline2")} onChange={(v) => updateTranslation(locale, "hero.headline2", v)} onPreview={() => setPreviewPath("hero.headline2")} />
+                    <Input label="Headline 3" isTranslating={translatingFields["hero.headline3"]} value={getTranslation(locale, "hero.headline3")} onChange={(v) => updateTranslation(locale, "hero.headline3", v)} onPreview={() => setPreviewPath("hero.headline3")} />
                     <Input label="Headline Accent" isTranslating={translatingFields["hero.headlineAccent"]} value={getTranslation(locale, "hero.headlineAccent")} onChange={(v) => updateTranslation(locale, "hero.headlineAccent", v)} onPreview={() => setPreviewPath("hero.headlineAccent")} />
                     <Textarea label="Description" isTranslating={translatingFields["hero.description"]} value={getTranslation(locale, "hero.description")} onChange={(v) => updateTranslation(locale, "hero.description", v)} onPreview={() => setPreviewPath("hero.description")} />
                     <Input label="Profile Title" isTranslating={translatingFields["hero.profile.title"]} value={getTranslation(locale, "hero.profile.title")} onChange={(v) => updateTranslation(locale, "hero.profile.title", v)} onPreview={() => setPreviewPath("hero.profile.title")} />
@@ -697,14 +698,14 @@ function DashboardContent() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 rounded-full bg-foreground px-6 py-3 shadow-2xl"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex w-[90%] max-w-sm items-center justify-between gap-2 rounded-full bg-foreground px-4 py-3 shadow-2xl"
           >
             <span className="text-sm font-medium text-background hidden sm:inline-block">Ada perubahan belum disimpan</span>
-            <span className="text-sm font-medium text-background sm:hidden">Belum disimpan</span>
+            <span className="text-xs font-medium text-background sm:hidden">Belum disimpan</span>
             <button
               onClick={saveData}
               disabled={saving}
-              className="flex items-center gap-2 rounded-full bg-violet-500 px-4 py-1.5 text-sm font-semibold text-white hover:bg-violet-600 transition-colors whitespace-nowrap"
+              className="flex shrink-0 items-center gap-2 rounded-full bg-violet-500 px-4 py-1.5 text-xs sm:text-sm font-semibold text-white hover:bg-violet-600 transition-colors whitespace-nowrap"
             >
               {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
               {saving ? "Menyimpan..." : "Simpan Semua"}

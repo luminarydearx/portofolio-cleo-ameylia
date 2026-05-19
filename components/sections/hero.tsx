@@ -102,7 +102,7 @@ export function Hero() {
                 <br />
                 <span data-edit-id="hero.headline2">{t.hero.headline2}</span>
                 <br />
-                {t.hero.headline3}{" "}
+                <span data-edit-id="hero.headline3">{t.hero.headline3}</span>{" "}
                 <span className="relative">
                   <span data-edit-id="hero.headlineAccent" className="gradient-text animate-gradient-shift bg-[length:200%_200%]">
                     {t.hero.headlineAccent}
